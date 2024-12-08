@@ -31,23 +31,23 @@ func main() {
 	check(err)
 	inputRows := strings.Split(string(data), "\n")
     rowsLength := len(inputRows) - 1
-	columnOne := make([]int, rowsLength)
-	columnTwo := make([]int, rowsLength)
+	listOne := make([]int, rowsLength)
+	listTwo := make([]int, rowsLength)
 	for i := 0; i < rowsLength; i++ {
 		row := inputRows[i]
 		stringNums := strings.Fields(row)
         intNums, err := mapSlice(stringNums, strconv.Atoi)
         check(err)
 
-        columnOne = append(columnOne, intNums[0])
-        columnTwo = append(columnTwo, intNums[1])
+        listOne = append(listOne, intNums[0])
+        listTwo = append(listTwo, intNums[1])
 	}
-    sort.Ints(columnOne)
-    sort.Ints(columnTwo)
+    sort.Ints(listOne)
+    sort.Ints(listTwo)
 
     totalDistance := 0
-    for i, num := range columnOne {
-        distance := num - columnTwo[i]
+    for i, num := range listOne {
+        distance := num - listTwo[i]
         if distance < 0 {
             distance = -distance
         }
