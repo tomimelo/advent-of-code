@@ -39,8 +39,8 @@ func main() {
         intNums, err := mapSlice(stringNums, strconv.Atoi)
         check(err)
 
-        listOne = append(listOne, intNums[0])
-        listTwo = append(listTwo, intNums[1])
+        listOne[i] = intNums[0]
+        listTwo[i] = intNums[1]
 	}
     sort.Ints(listOne)
     sort.Ints(listTwo)
